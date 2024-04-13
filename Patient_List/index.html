@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <title>Patient list</title>
+</head>
+
+<body>
+
+    <header id="head">
+        <nav class="navbar">
+            <div class="navbar-child">
+
+           
+            <div class="logo_container">
+                <div class="logo">
+                    <img src="./MainLogo-transperent.png" />
+                </div>
+            </div>
+            <div class="nav_items">
+                <div class="nav_search">
+                    <form action="">
+                        <input type="text" name="search" id="" placeholder="Search now...">
+                        <button type="submit"><i class="fa-solid fa-magnifying-glass fa-2x"></i></button>
+                    </form>
+                </div>
+                <div class="right-info">
+                    <div class="doc_info">
+                        <p>John Doe</p>
+                        <h5>General Doctor</h5>
+                    </div>
+                    <div class="nav_date">
+                        <input type="date" name="" id="">
+                    </div>
+                    <div class="nav_menu_icons">
+                        <i class="fa-regular fa-envelope fa-2x"></i>
+                        <i class="fa-regular fa-bell fa-2x"></i>
+                        <i class="fa-solid fa-arrow-right-from-bracket fa-2x"></i>
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>
+        </nav>
+
+        <div class="hero_section">
+            <div class="sidebar" id="sideSection">
+                <div class="header-burger" id="burger" onclick="handleMenu()">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+                <p>menu</p>
+                <ul>
+                    <li class="sidebar_item  "><a href="#" class="sidenav_link active">
+                            <div>
+                                <i class="fa-solid fa-chart-pie fa-2x"></i>
+                            </div>
+                            <p>Dashboard</p>
+                        </a> </li>
+                    <li class="sidebar_item"><a href="#" class="sidenav_link">
+                            <div>
+                                <i class="fa-solid fa-calendar-days fa-2x"></i>
+                            </div>
+                            <p>Schedule</p>
+                        </a>
+                    </li>
+                    <li class="sidebar_item"><a href="#" class="sidenav_link">
+                            <div>
+                                <i class="fa-regular fa-calendar-check fa-2x"></i>
+                            </div>
+                            <p>Tasks</p>
+                        </a>
+                    </li>
+                    <li class="sidebar_item"><a href="#" class="sidenav_link">
+                            <div>
+                                <i style="color: rgba(0, 0, 172, 1);" class="fa-solid fa-user-group fa-2x"></i>
+                            </div>
+                            <p style="color: rgba(0, 0, 172, 1);">Patients</p>
+                        </a>
+                    </li>
+                    <li class="sidebar_item"><a href="#" class="sidenav_link">
+                            <div>
+                                <i class="fa-regular fa-envelope fa-2x"></i>
+                            </div>
+                            <p>Messages</p>
+                            <p>4</p>
+                        </a> </li>
+                    <li class="sidebar_item"><a href="#" class="sidenav_link">
+                            <div>
+                                <i class="fa-solid fa-chart-simple fa-2x"></i>
+                            </div>
+                            <p>Analytics</p>
+                        </a>
+                    </li>
+
+                </ul>
+
+                <div class="divider_bottom_1">
+                </div>
+                <p>general</p>
+                <ul>
+                    <li class="sidebar_item"><a href="#" class="sidenav_link">
+                            <div>
+                                <i class="fa-solid fa-gear fa-2x"></i>
+                            </div>
+                            <p>
+                                Setting
+                            </p>
+                        </a>
+                    </li>
+
+                    <li class="sidebar_item"><a href="#" class="sidenav_link">
+                            <div>
+                                <i class="fa-regular fa-circle-question fa-2x"></i>
+                            </div>
+                            <p>
+                                Support
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+                <div class="divider_bottom_2">
+                </div>
+            </div>
+            <div class="main-container">
+                <p>Patient register</p>
+                <div class="header">
+                    <div class="header-burger" id="burger" onclick="handleMenu()">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                    <div class="pat-count">
+                        <p><b>Total Patients</b>(487)</p>
+                    </div>
+                   
+                    <div class="imggg">
+                        <img src="Frame 81.png" alt="" />
+                        <img src="Frame 80.png"  alt=""/>
+                        <img src="Frame 82.png"  alt=""/>
+                    </div>
+                </div>
+                <div class="list">
+                    <div id="userList1">
+                        <ul class="userListJs">
+                            <li class="heading">
+                                <span> Name</span>
+                                <span>Diagnosis</span>
+                                <span>Status</span>
+                                <span >Last Appointment</span>
+                                <span class="next-appointment">Next Appointment</span>
+                                <span class="heading-option">Options</span>
+                            </li>
+                     </ul>
+
+                    </div>
+           
+                    <div class="pagination">
+                        <div>
+                            <button class="prev-btn"> <i class="fa-solid fa-angle-left"></i> Prev</button>
+                        </div>
+                          <div class="pages">
+                             <div>1</div>
+                             <div>2</div>
+                             <div>3</div>
+                             <div>...</div>
+                             <div>41</div>
+                          </div>
+                          <div>
+                            <button class="next-btn"> Next <i class="fa-solid fa-angle-right"></i></button>
+                          </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+     <script>
+     let toggle = false;
+        let sidebar = document.getElementById("sideSection");
+
+        const handleMenu = () => {
+            if (toggle === false) {
+                sidebar.style.display = "block"; // Show sidebar
+                toggle = true;
+            } else {
+                sidebar.style.display = "none"; // Hide sidebar
+                toggle = false;
+            }
+        };
+
+     </script>
+    <script src="index.js"></script>
+    <script src="index2.js"></script>
+</body>
+
+</html>
