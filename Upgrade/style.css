@@ -303,7 +303,7 @@ top: 25%;
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: .5rem;
+        gap: .8rem;
     }
         .header-user-info-mobile{
       padding: .2rem .5rem;
