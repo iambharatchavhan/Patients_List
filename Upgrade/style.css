@@ -149,6 +149,8 @@ top: 25%;
     align-items:center;
     gap: 1rem;
     padding-left: 1rem;
+    transition: all 0.3s ease; 
+
 }
 
  .dashboard-navigation:hover{
@@ -162,6 +164,13 @@ top: 25%;
   .dashboard-navigation:hover .icons-navigation svg path {
     stroke: #217BA0; /* Change SVG stroke color to blue when parent div is hovered */
   }
+
+  .dashboard-navigation:hover .icons-navigation svg rect {
+    stroke: #217BA0; /* Change SVG stroke color to blue when parent div is hovered */
+  }
+
+
+
 
 .icons-navigation{
     display: flex;
@@ -211,6 +220,9 @@ top: 25%;
     margin-top: 8rem;
 }
 
+.tooltip-text{
+  display: none;
+}
 
 
 
@@ -252,13 +264,13 @@ top: 25%;
     }
   
     .header-right-info-container-mobile  {
-        display: none;
-        transition: opacity 1s ease-in-out; 
+        visibility: hidden;
+        transition: opacity .3s ease-in-out; 
         opacity: 0; 
     }
     
     .header-right-info-container-mobile.show {
-        display: block;
+        visibility: visible;
         opacity: 1;
     }
 
@@ -322,6 +334,55 @@ top: 25%;
   padding-left:.5rem;
   padding-top: 2rem;
 }
+
+.tooltip-text{
+  display:block;
+}
+
+
+.icon-tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  width: 120px;
+  background-color: #217BA0 ;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 0%;
+  left:450%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+
+.tooltip-text::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%; /* position on the left side */
+  margin-top: -5px; /* half of the height of the arrow */
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent #217BA0 transparent transparent; /* adjust color as needed */
+}
+
+
+
+.icon-tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
 
 
 /* <***********************dashboard sidebar header ***********************>*/
