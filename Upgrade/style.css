@@ -279,7 +279,7 @@ top: 25%;
         position: absolute;
         top:3.5rem;
         right: 0;
-        width: 140%;
+        width: 180%;
         font-size: .9rem;
         text-align: right;
         padding: .2rem;
@@ -305,8 +305,12 @@ top: 25%;
         align-items: center;
         gap: .5rem;
     }
+        .header-user-info-mobile{
+      padding: .2rem .5rem;
+    }
     .doctor-type-mobile{
         font-weight: 600;
+        text-wrap: nowrap;
     }
 /* <===============dashboard search header =====================>*/
 
